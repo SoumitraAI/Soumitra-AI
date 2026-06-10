@@ -1,0 +1,12 @@
+{
+  "name": "soumitra-ai",
+  "version": "1.0.0",
+  "description": "Soumitra.AI — independent AI research and strategy",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

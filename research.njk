@@ -1,0 +1,25 @@
+---
+layout: layouts/base.njk
+title: Research
+description: Consulting-grade deep dives into sectors and organisational strategy, all centred on AI.
+permalink: /research/
+---
+<section class="section">
+  <div class="wrap">
+    <header class="list-header">
+      <p class="eyebrow mono">THE LIBRARY</p>
+      <h1>Research</h1>
+      <p class="dek">Deep dives into what AI means for specific sectors and organisations — written to the standard of a consulting engagement, published in the open.</p>
+    </header>
+    <div class="dossier-grid">
+      {% for report in collections.reports %}
+      <a class="dossier" href="{{ report.url }}">
+        <p class="dossier-ref mono">{{ report.data.ref or "REPORT" }}</p>
+        <h3>{{ report.data.title }}</h3>
+        <p class="dossier-dek">{{ report.data.description }}</p>
+        <p class="dossier-meta mono">{{ report.date | readableDate }}{% if report.data.tags %}{% for tag in report.data.tags %}{% if tag != "reports" %} · {{ tag | upper }}{% endif %}{% endfor %}{% endif %}</p>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
