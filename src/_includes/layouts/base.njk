@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if title %}{{ title }} · {{ site.name }}{% else %}{{ site.name }} — {{ site.tagline }}{% endif %}</title>
   <meta name="description" content="{{ description or site.description }}">
+  <meta name="view-transition" content="same-origin">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -30,20 +31,45 @@
   </main>
 
   <footer class="site-footer">
-    <div class="wrap footer-inner">
-      <div>
-        <p class="footer-wordmark">Soumitra<span class="wordmark-dot">.AI</span></p>
-        <p class="footer-tag">{{ site.tagline }}</p>
+    <div class="wrap">
+      <div class="footer-inner">
+        <div>
+          <p class="footer-wordmark">Soumitra<span class="wordmark-dot">.AI</span></p>
+          <p class="footer-tag">{{ site.tagline }}</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="/research/">Research</a>
+          <a href="/blog/">Blog</a>
+          <a href="/tags/">Sectors</a>
+          <a href="/about/">About</a>
+          <a href="/work-with-me/">Work with me</a>
+        </nav>
+        <p class="footer-meta">© {% year %} {{ site.author }}.<br>All analysis is the author's own.</p>
       </div>
-      <nav class="footer-nav" aria-label="Footer">
-        <a href="/research/">Research</a>
-        <a href="/blog/">Blog</a>
-        <a href="/tags/">Sectors</a>
-        <a href="/about/">About</a>
-        <a href="/work-with-me/">Work with me</a>
-      </nav>
-      <p class="footer-meta">© {% year %} {{ site.author }}. All analysis is the author's own.</p>
+      <p class="footer-giant" aria-hidden="true">Soumitra.AI</p>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.querySelectorAll('[data-reveal]').forEach(function (el) {
+          el.classList.add('in');
+        });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('[data-reveal]').forEach(function (el) {
+        io.observe(el);
+      });
+    })();
+  </script>
 </body>
 </html>

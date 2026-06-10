@@ -13,7 +13,7 @@ permalink: /research/
     </header>
     <div class="dossier-grid">
       {% for report in collections.reports %}
-      <a class="dossier" href="{{ report.url }}">
+      <a class="dossier" href="{{ report.url }}" data-reveal>
         <p class="dossier-ref mono">{{ report.data.ref or "REPORT" }}</p>
         <h3>{{ report.data.title }}</h3>
         <p class="dossier-dek">{{ report.data.description }}</p>

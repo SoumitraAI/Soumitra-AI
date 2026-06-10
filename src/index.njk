@@ -2,31 +2,75 @@
 layout: layouts/base.njk
 ---
 <section class="hero">
-  <div class="wrap">
-    <p class="eyebrow mono">{{ site.tagline | upper }}</p>
-    <h1 class="hero-title">Clear thinking on artificial intelligence —<br class="desktop-only"> for the people deciding what to do about it.</h1>
-    <p class="hero-sub">I'm {{ site.author }}. I write about where AI is heading, and publish consulting-grade research on what it means for specific sectors and organisations.</p>
-    <div class="hero-actions">
-      <a class="button" href="/research/">Read the research</a>
-      <a class="button button-ghost" href="/blog/">Latest writing</a>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow mono" data-rise="1">{{ site.tagline | upper }}</p>
+      <h1 class="hero-title" data-rise="2">Clear thinking on artificial intelligence — for the people deciding what to do about it.</h1>
+      <p class="hero-sub" data-rise="3">I'm {{ site.author }}. I write about where AI is heading, and publish consulting-grade research on what it means for specific sectors and organisations.</p>
+      <div class="hero-actions" data-rise="4">
+        <a class="button" href="/research/">Read the research</a>
+        <a class="button button-ghost" href="/blog/">Latest writing</a>
+      </div>
     </div>
+    <aside class="readout" data-rise="3" aria-label="Latest publications">
+      <p class="readout-head mono"><span class="live-dot" aria-hidden="true"></span>INDEX / LATEST</p>
+      <ul class="readout-list">
+        {% for report in collections.reports %}
+          {% if loop.index <= 1 %}
+          <li><a href="{{ report.url }}"><span class="mono readout-date">{{ report.date | isoDate }}</span><span class="readout-title">{{ report.data.title }}</span></a></li>
+          {% endif %}
+        {% endfor %}
+        {% for post in collections.posts %}
+          {% if loop.index <= 3 %}
+          <li><a href="{{ post.url }}"><span class="mono readout-date">{{ post.date | isoDate }}</span><span class="readout-title">{{ post.data.title }}</span></a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+      <p class="readout-cursor mono" aria-hidden="true">&gt;<span class="cursor">_</span></p>
+    </aside>
   </div>
 </section>
 
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    {% set tickerItems = ["Sector deep dives", "Organisational strategy", "AI developments"] %}
+    {% for i in range(0, 2) %}
+      {% for item in tickerItems %}<span>{{ item | upper }}</span>{% endfor %}
+      {% for tag in collections.tagList %}<span>{{ tag | upper }}</span>{% endfor %}
+    {% endfor %}
+  </div>
+</div>
+
 <section class="section section-mist">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head" data-reveal>
       <h2>Research</h2>
       <a class="more-link" href="/research/">All research →</a>
     </div>
+    {% for report in collections.reports %}
+      {% if loop.index == 1 %}
+      <a class="dossier dossier-featured" href="{{ report.url }}" data-reveal>
+        <div class="featured-main">
+          <p class="dossier-ref mono">{{ report.data.ref or "REPORT" }} · LATEST</p>
+          <h3>{{ report.data.title }}</h3>
+          <p class="dossier-dek">{{ report.data.description }}</p>
+        </div>
+        <div class="featured-side">
+          <p class="dossier-meta mono">{{ report.date | readableDate }}</p>
+          {% if report.data.tags %}<p class="dossier-meta mono">{% for tag in report.data.tags %}{{ tag | upper }}{% if not loop.last %} · {% endif %}{% endfor %}</p>{% endif %}
+          <span class="featured-cta mono">READ THE REPORT →</span>
+        </div>
+      </a>
+      {% endif %}
+    {% endfor %}
     <div class="dossier-grid">
       {% for report in collections.reports %}
-        {% if loop.index <= 2 %}
-        <a class="dossier" href="{{ report.url }}">
+        {% if loop.index > 1 and loop.index <= 4 %}
+        <a class="dossier" href="{{ report.url }}" data-reveal>
           <p class="dossier-ref mono">{{ report.data.ref or "REPORT" }}</p>
           <h3>{{ report.data.title }}</h3>
           <p class="dossier-dek">{{ report.data.description }}</p>
-          <p class="dossier-meta mono">{{ report.date | readableDate }}{% if report.data.tags %}{% for tag in report.data.tags %}{% if tag != "reports" %} · {{ tag | upper }}{% endif %}{% endfor %}{% endif %}</p>
+          <p class="dossier-meta mono">{{ report.date | readableDate }}</p>
         </a>
         {% endif %}
       {% endfor %}
@@ -36,14 +80,14 @@ layout: layouts/base.njk
 
 <section class="section">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head" data-reveal>
       <h2>From the blog</h2>
       <a class="more-link" href="/blog/">All posts →</a>
     </div>
     <ul class="post-list">
       {% for post in collections.posts %}
         {% if loop.index <= 5 %}
-        <li class="post-row">
+        <li class="post-row" data-reveal>
           <a href="{{ post.url }}">
             <span class="post-row-date mono">{{ post.date | readableDate }}</span>
             <span class="post-row-body">
@@ -59,7 +103,7 @@ layout: layouts/base.njk
 </section>
 
 <section class="section section-ink">
-  <div class="wrap cta-band">
+  <div class="wrap cta-band" data-reveal>
     <div>
       <h2>Working on an AI decision?</h2>
       <p>I take on a small number of research and strategy engagements — sector deep dives, opportunity assessments and AI strategy reviews.</p>

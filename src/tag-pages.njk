@@ -17,7 +17,7 @@ eleventyComputed:
     </header>
     <ul class="post-list">
       {% for item in collections[tag] | reverse %}
-      <li class="post-row">
+      <li class="post-row" data-reveal>
         <a href="{{ item.url }}">
           <span class="post-row-date mono">{{ item.date | readableDate }}</span>
           <span class="post-row-body">

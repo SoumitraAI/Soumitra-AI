@@ -13,7 +13,7 @@ permalink: /blog/
     </header>
     <ul class="post-list">
       {% for post in collections.posts %}
-      <li class="post-row">
+      <li class="post-row" data-reveal>
         <a href="{{ post.url }}">
           <span class="post-row-date mono">{{ post.date | readableDate }}</span>
           <span class="post-row-body">
