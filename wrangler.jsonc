@@ -1,0 +1,10 @@
+{
+  "name": "soumitra-ai",
+  "compatibility_date": "2026-06-10",
+  "build": {
+    "command": "npm run build"
+  },
+  "assets": {
+    "directory": "./_site"
+  }
+}
