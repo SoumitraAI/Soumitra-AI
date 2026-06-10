@@ -1,0 +1,19 @@
+---
+layout: layouts/base.njk
+title: Sectors & topics
+description: Browse all writing and research by sector or topic.
+permalink: /tags/
+---
+<section class="section">
+  <div class="wrap">
+    <header class="list-header">
+      <p class="eyebrow mono">BROWSE BY</p>
+      <h1>Sectors & topics</h1>
+    </header>
+    <p class="tag-row tag-row-large">
+      {% for tag in collections.tagList %}
+      <a class="tag" href="/tags/{{ tag | slugify }}/">{{ tag }}</a>
+      {% endfor %}
+    </p>
+  </div>
+</section>

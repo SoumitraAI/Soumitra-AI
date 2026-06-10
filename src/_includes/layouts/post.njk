@@ -1,0 +1,25 @@
+---
+layout: layouts/base.njk
+---
+<article class="article wrap-narrow">
+  <header class="article-header">
+    <p class="eyebrow">Blog · <time datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time></p>
+    <h1>{{ title }}</h1>
+    {% if description %}<p class="dek">{{ description }}</p>{% endif %}
+    {% if tags %}
+    <p class="tag-row">
+      {%- for tag in tags -%}
+        {%- if tag != "posts" and tag != "reports" -%}
+          <a class="tag" href="/tags/{{ tag | slugify }}/">{{ tag }}</a>
+        {%- endif -%}
+      {%- endfor -%}
+    </p>
+    {% endif %}
+  </header>
+  <div class="prose">
+    {{ content | safe }}
+  </div>
+  <footer class="article-footer">
+    <a class="backlink" href="/blog/">← All blog posts</a>
+  </footer>
+</article>

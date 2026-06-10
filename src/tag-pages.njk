@@ -1,0 +1,32 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: collections.tagList
+  size: 1
+  alias: tag
+permalink: /tags/{{ tag | slugify }}/
+eleventyComputed:
+  title: "{{ tag }}"
+---
+<section class="section">
+  <div class="wrap">
+    <header class="list-header">
+      <p class="eyebrow mono">SECTOR / TOPIC</p>
+      <h1>{{ tag }}</h1>
+      <p><a class="backlink" href="/tags/">← All sectors & topics</a></p>
+    </header>
+    <ul class="post-list">
+      {% for item in collections[tag] | reverse %}
+      <li class="post-row">
+        <a href="{{ item.url }}">
+          <span class="post-row-date mono">{{ item.date | readableDate }}</span>
+          <span class="post-row-body">
+            <span class="post-row-title">{{ item.data.title }}</span>
+            {% if item.data.description %}<span class="post-row-dek">{{ item.data.description }}</span>{% endif %}
+          </span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

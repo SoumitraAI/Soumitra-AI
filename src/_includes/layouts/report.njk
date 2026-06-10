@@ -1,0 +1,28 @@
+---
+layout: layouts/base.njk
+---
+<article class="article wrap-narrow">
+  <header class="article-header report-header">
+    <p class="eyebrow mono">{% if ref %}{{ ref }} · {% endif %}Research · <time datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time></p>
+    <h1>{{ title }}</h1>
+    {% if description %}<p class="dek">{{ description }}</p>{% endif %}
+    <div class="report-meta">
+      {% if tags %}
+      <p class="tag-row">
+        {%- for tag in tags -%}
+          {%- if tag != "posts" and tag != "reports" -%}
+            <a class="tag" href="/tags/{{ tag | slugify }}/">{{ tag }}</a>
+          {%- endif -%}
+        {%- endfor -%}
+      </p>
+      {% endif %}
+      {% if pdf %}<a class="button" href="{{ pdf }}">Download the full report (PDF)</a>{% endif %}
+    </div>
+  </header>
+  <div class="prose">
+    {{ content | safe }}
+  </div>
+  <footer class="article-footer">
+    <a class="backlink" href="/research/">← All research</a>
+  </footer>
+</article>

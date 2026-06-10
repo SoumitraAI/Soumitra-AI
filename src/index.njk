@@ -1,0 +1,69 @@
+---
+layout: layouts/base.njk
+---
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow mono">{{ site.tagline | upper }}</p>
+    <h1 class="hero-title">Clear thinking on artificial intelligence —<br class="desktop-only"> for the people deciding what to do about it.</h1>
+    <p class="hero-sub">I'm {{ site.author }}. I write about where AI is heading, and publish consulting-grade research on what it means for specific sectors and organisations.</p>
+    <div class="hero-actions">
+      <a class="button" href="/research/">Read the research</a>
+      <a class="button button-ghost" href="/blog/">Latest writing</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-mist">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Research</h2>
+      <a class="more-link" href="/research/">All research →</a>
+    </div>
+    <div class="dossier-grid">
+      {% for report in collections.reports %}
+        {% if loop.index <= 2 %}
+        <a class="dossier" href="{{ report.url }}">
+          <p class="dossier-ref mono">{{ report.data.ref or "REPORT" }}</p>
+          <h3>{{ report.data.title }}</h3>
+          <p class="dossier-dek">{{ report.data.description }}</p>
+          <p class="dossier-meta mono">{{ report.date | readableDate }}{% if report.data.tags %}{% for tag in report.data.tags %}{% if tag != "reports" %} · {{ tag | upper }}{% endif %}{% endfor %}{% endif %}</p>
+        </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>From the blog</h2>
+      <a class="more-link" href="/blog/">All posts →</a>
+    </div>
+    <ul class="post-list">
+      {% for post in collections.posts %}
+        {% if loop.index <= 5 %}
+        <li class="post-row">
+          <a href="{{ post.url }}">
+            <span class="post-row-date mono">{{ post.date | readableDate }}</span>
+            <span class="post-row-body">
+              <span class="post-row-title">{{ post.data.title }}</span>
+              {% if post.data.description %}<span class="post-row-dek">{{ post.data.description }}</span>{% endif %}
+            </span>
+          </a>
+        </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section section-ink">
+  <div class="wrap cta-band">
+    <div>
+      <h2>Working on an AI decision?</h2>
+      <p>I take on a small number of research and strategy engagements — sector deep dives, opportunity assessments and AI strategy reviews.</p>
+    </div>
+    <a class="button button-light" href="/work-with-me/">Work with me</a>
+  </div>
+</section>

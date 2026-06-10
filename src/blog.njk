@@ -1,0 +1,28 @@
+---
+layout: layouts/base.njk
+title: Blog
+description: Shorter writing on AI developments, ideas and what they mean.
+permalink: /blog/
+---
+<section class="section">
+  <div class="wrap">
+    <header class="list-header">
+      <p class="eyebrow mono">NOTES & ANALYSIS</p>
+      <h1>Blog</h1>
+      <p class="dek">Shorter, more frequent writing — recent developments in AI and what I make of them.</p>
+    </header>
+    <ul class="post-list">
+      {% for post in collections.posts %}
+      <li class="post-row">
+        <a href="{{ post.url }}">
+          <span class="post-row-date mono">{{ post.date | readableDate }}</span>
+          <span class="post-row-body">
+            <span class="post-row-title">{{ post.data.title }}</span>
+            {% if post.data.description %}<span class="post-row-dek">{{ post.data.description }}</span>{% endif %}
+          </span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
