@@ -1,23 +1,17 @@
 ---
 layout: layouts/page.njk
 title: Work with me
-eyebrow: "ENGAGEMENTS"
-description: "Research and strategy engagements — sector deep dives, opportunity assessments and AI strategy reviews."
+eyebrow: "ADVISORY — OPENING SOON"
+description: "An advisory practice built on the research published here. Engagements open soon."
 permalink: /work-with-me/
 ---
 
-The research published here is the same standard of work I take on privately. I work with a small number of organisations at a time, typically on:
+I'm building an advisory practice on the same foundations as the research published on this site — rigorous, sector-specific analysis of what AI changes and what to do about it.
 
-**Sector deep dives.** A rigorous view of how AI is reshaping a specific sector — where value is moving, who's exposed, and where the genuine openings are.
+Engagements aren't open yet. When they are, the work will centre on the questions this site exists to answer: where AI is genuinely reshaping a sector, where the real opportunities sit inside an organisation, and how to pressure-test an AI strategy before it becomes a commitment.
 
-**AI opportunity assessments.** A structured review of where AI can create real value inside your organisation, separated clearly from where it can't yet.
+## In the meantime
 
-**Strategy reviews.** A second pair of eyes on an AI strategy you've already drafted — pressure-testing assumptions before they become commitments.
+The best way to evaluate whether that future work would be useful to you is the work itself — the [research library](/research/) and [blog](/blog/) are open, and they're written to the same standard the advisory practice will be.
 
-*Edit this list to match what you actually offer, and add anything that builds confidence: past work, sectors you know deeply, how an engagement typically runs.*
-
-## Get in touch
-
-The simplest way to start is an email describing your situation in a few lines: <a href="mailto:hello@soumitra.ai">hello@soumitra.ai</a>
-
-I reply to everything, usually within two working days.
+If you'd like to be in touch when engagements open, or simply want to start a conversation, connect with me on [LinkedIn](https://www.linkedin.com/in/soumitra-deshpande/) — I read and reply to messages there.
