@@ -830,3 +830,46 @@ button:focus-visible {
     padding-top: 22px;
   }
 }
+
+/* ---------- Mermaid diagrams ---------- */
+
+.prose pre.mermaid {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  padding: 28px 20px;
+  margin: 1.8em 0;
+  text-align: center;
+  overflow-x: auto;
+  font-family: var(--mono);
+  line-height: 1.4;
+}
+.prose pre.mermaid:not([data-processed]) { color: transparent; min-height: 60px; }
+.prose pre.mermaid svg { max-width: 100%; height: auto; }
+
+/* Hero SVG showpiece figures */
+.prose figure.showpiece {
+  margin: 2em 0;
+  padding: 0;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  overflow: hidden;
+}
+.prose figure.showpiece svg { display: block; width: 100%; height: auto; }
+.prose figure.showpiece figcaption {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  color: var(--meta);
+  text-transform: uppercase;
+  padding: 12px 20px;
+  border-top: 1px solid var(--line);
+}
+
+.article-subtitle {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--text);
+  margin: 0 0 16px;
+  line-height: 1.4;
+}

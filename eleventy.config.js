@@ -39,6 +39,23 @@ module.exports = function (eleventyConfig) {
   // Current year for the footer
   eleventyConfig.addShortcode("year", () => String(new Date().getFullYear()));
 
+  // Convert ```mermaid fenced blocks into <pre class="mermaid"> for client-side render
+  eleventyConfig.addTransform("mermaid", function (content) {
+    if (!(this.page.outputPath || "").endsWith(".html")) return content;
+    return content.replace(
+      /<pre><code class="language-mermaid">([\s\S]*?)<\/code><\/pre>/g,
+      function (match, code) {
+        const decoded = code
+          .replace(/&lt;/g, "<")
+          .replace(/&gt;/g, ">")
+          .replace(/&quot;/g, '"')
+          .replace(/&#39;/g, "'")
+          .replace(/&amp;/g, "&");
+        return '<pre class="mermaid">' + decoded + "</pre>";
+      }
+    );
+  });
+
   return {
     dir: {
       input: "src",

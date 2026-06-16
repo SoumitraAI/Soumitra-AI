@@ -72,5 +72,27 @@
       });
     })();
   </script>
+
+  {% if diagrams %}
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      securityLevel: 'strict',
+      fontFamily: "'IBM Plex Sans', sans-serif",
+      theme: 'base',
+      themeVariables: {
+        background: '#0d1825',
+        primaryColor: '#112134',
+        primaryBorderColor: '#2fd6c3',
+        primaryTextColor: '#e9eff5',
+        lineColor: '#6e8296',
+        secondaryColor: '#13263c',
+        tertiaryColor: '#0d1825',
+        fontSize: '15px'
+      }
+    });
+  </script>
+  {% endif %}
 </body>
 </html>
