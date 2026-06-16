@@ -190,3 +190,6 @@ And the strategic implication is the part I care about most. The next phase of A
 ---
 
 *This is a foundational reference piece — I'll keep it updated as the field moves. If you'd phrase something differently, or think I've got a layer wrong, tell me on [LinkedIn](https://www.linkedin.com/in/soumitra-deshpande/).*
+
+
+Soumitra Deshpande
