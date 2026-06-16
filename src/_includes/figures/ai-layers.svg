@@ -1,52 +1,53 @@
 <figure class="showpiece">
-<svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Nested layers of artificial intelligence, from the broad field of AI down through machine learning, deep learning, neural networks, transformers and large language models, with RAG and agents shown as architectures built on top of LLMs.">
+<svg viewBox="0 0 600 620" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The field of AI nests inwards from artificial intelligence down to large language models. RAG and agents are architectures built on top of LLMs, leading to automated business systems.">
   <defs>
     <style>
-      .nest-label { font-family: 'IBM Plex Sans', sans-serif; fill: #e9eff5; }
-      .nest-sub { font-family: 'IBM Plex Mono', monospace; fill: #6e8296; font-size: 11px; letter-spacing: 0.08em; }
-      .built-label { font-family: 'IBM Plex Sans', sans-serif; fill: #0b2239; font-weight: 600; }
-      .arm { stroke: #2fd6c3; stroke-width: 1; stroke-dasharray: 3 3; opacity: 0.7; }
+      .nl { font-family: 'IBM Plex Mono', monospace; fill: #6e8296; font-size: 11px; letter-spacing: 0.08em; }
+      .core { font-family: 'IBM Plex Sans', sans-serif; fill: #e9eff5; font-weight: 600; }
+      .built { font-family: 'IBM Plex Sans', sans-serif; fill: #0b2239; font-weight: 600; font-size: 15px; }
+      .builtsub { font-family: 'IBM Plex Mono', monospace; fill: #0a4f4b; font-size: 10px; }
+      .sys { font-family: 'IBM Plex Sans', sans-serif; fill: #e9eff5; font-size: 14px; }
+      .syssub { font-family: 'IBM Plex Mono', monospace; fill: #6e8296; font-size: 10px; letter-spacing: 0.06em; }
     </style>
   </defs>
 
-  <!-- Nested rings -->
-  <rect x="20" y="20" width="420" height="420" rx="6" fill="none" stroke="#2fd6c3" stroke-opacity="0.25"/>
-  <text x="36" y="44" class="nest-sub" fill="#2fd6c3">ARTIFICIAL INTELLIGENCE</text>
+  <!-- ===== Nested rings (top) ===== -->
+  <rect x="40" y="20" width="520" height="300" rx="6" fill="none" stroke="#2fd6c3" stroke-opacity="0.25"/>
+  <text x="56" y="42" class="nl" fill="#2fd6c3">ARTIFICIAL INTELLIGENCE</text>
 
-  <rect x="48" y="62" width="364" height="350" rx="5" fill="#0d1825" stroke="#6e8296" stroke-opacity="0.3"/>
-  <text x="64" y="84" class="nest-sub">MACHINE LEARNING</text>
+  <rect x="70" y="56" width="460" height="248" rx="5" fill="#0d1825" stroke="#6e8296" stroke-opacity="0.3"/>
+  <text x="86" y="78" class="nl">MACHINE LEARNING</text>
 
-  <rect x="76" y="100" width="308" height="288" rx="5" fill="#112134" stroke="#6e8296" stroke-opacity="0.4"/>
-  <text x="92" y="122" class="nest-sub">DEEP LEARNING</text>
+  <rect x="100" y="92" width="400" height="196" rx="5" fill="#112134" stroke="#6e8296" stroke-opacity="0.4"/>
+  <text x="116" y="114" class="nl">DEEP LEARNING</text>
 
-  <rect x="104" y="138" width="252" height="226" rx="4" fill="#13263c" stroke="#6e8296" stroke-opacity="0.5"/>
-  <text x="120" y="160" class="nest-sub">NEURAL NETWORKS</text>
+  <rect x="130" y="128" width="340" height="144" rx="4" fill="#13263c" stroke="#6e8296" stroke-opacity="0.5"/>
+  <text x="146" y="150" class="nl">NEURAL NETWORKS</text>
 
-  <rect x="132" y="176" width="196" height="164" rx="4" fill="#16304b" stroke="#2fd6c3" stroke-opacity="0.4"/>
-  <text x="148" y="198" class="nest-sub" fill="#9ab8d1">TRANSFORMERS</text>
+  <rect x="160" y="164" width="280" height="92" rx="4" fill="#16304b" stroke="#2fd6c3" stroke-opacity="0.4"/>
+  <text x="176" y="186" class="nl" fill="#9ab8d1">TRANSFORMERS</text>
 
-  <rect x="160" y="214" width="140" height="104" rx="4" fill="#1c3550" stroke="#2fd6c3" stroke-opacity="0.7"/>
-  <text x="230" y="272" text-anchor="middle" class="nest-label" font-weight="600" font-size="17">LLMs</text>
+  <rect x="240" y="200" width="120" height="44" rx="4" fill="#1c3550" stroke="#2fd6c3" stroke-opacity="0.7"/>
+  <text x="300" y="227" text-anchor="middle" class="core" font-size="17">LLMs</text>
 
-  <!-- "Built on top of" column -->
-  <text x="520" y="44" class="nest-sub" fill="#2fd6c3">BUILT ON TOP OF LLMs</text>
+  <!-- ===== Connector down ===== -->
+  <line x1="300" y1="320" x2="300" y2="356" stroke="#2fd6c3" stroke-width="1" stroke-dasharray="3 3" opacity="0.7"/>
+  <text x="300" y="344" text-anchor="middle" class="nl" fill="#2fd6c3">BUILT ON TOP OF LLMs</text>
 
-  <rect x="500" y="120" width="200" height="62" rx="4" fill="#2fd6c3"/>
-  <text x="600" y="148" text-anchor="middle" class="built-label" font-size="15">RAG</text>
-  <text x="600" y="167" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#0a4f4b">what to speak about</text>
+  <!-- ===== Built-on layer (bottom) ===== -->
+  <rect x="120" y="360" width="360" height="50" rx="4" fill="#2fd6c3"/>
+  <text x="150" y="384" class="built">RAG</text>
+  <text x="150" y="400" class="builtsub">what to reason about</text>
 
-  <rect x="500" y="210" width="200" height="62" rx="4" fill="#2fd6c3"/>
-  <text x="600" y="238" text-anchor="middle" class="built-label" font-size="15">AGENTS</text>
-  <text x="600" y="257" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="10" fill="#0a4f4b">reason · act · repeat</text>
+  <rect x="120" y="422" width="360" height="50" rx="4" fill="#2fd6c3"/>
+  <text x="150" y="446" class="built">AGENTS</text>
+  <text x="150" y="462" class="builtsub">plan · use tools · act · repeat</text>
 
-  <rect x="500" y="300" width="200" height="62" rx="4" fill="none" stroke="#2fd6c3" stroke-opacity="0.6"/>
-  <text x="600" y="328" text-anchor="middle" class="nest-label" font-size="14">AUTOMATED SYSTEMS</text>
-  <text x="600" y="347" text-anchor="middle" class="nest-sub" fill="#6e8296">business outcomes</text>
+  <line x1="300" y1="472" x2="300" y2="500" stroke="#2fd6c3" stroke-width="1" stroke-dasharray="3 3" opacity="0.7"/>
 
-  <!-- Connector arms from LLM box to the built-on layer -->
-  <path class="arm" d="M300 250 H460 V151 H500" fill="none"/>
-  <path class="arm" d="M300 266 H440 V241 H500" fill="none"/>
-  <path class="arm" d="M700 241 H712 V331 H700" fill="none"/>
+  <rect x="120" y="500" width="360" height="50" rx="4" fill="none" stroke="#2fd6c3" stroke-opacity="0.6"/>
+  <text x="150" y="524" class="sys">AUTOMATED BUSINESS SYSTEMS</text>
+  <text x="150" y="540" class="syssub">consistent business outcomes</text>
 </svg>
-<figcaption>Figure 1 — The field nests inwards; the operational layers build outwards from LLMs.</figcaption>
+<figcaption>Figure 1 — The field nests inwards to LLMs; the operational layers build outwards from them.</figcaption>
 </figure>
