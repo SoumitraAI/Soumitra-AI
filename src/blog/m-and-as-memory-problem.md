@@ -73,6 +73,9 @@ The firms that benefit most will not necessarily be those with the most advanced
 
 In that sense, the future of M&A is not simply about automation. It is about learning. And AI may prove to be the most powerful institutional memory ever created.
 
+
+Soumitra Deshpande
+
 ---
 
 **Further reading**
